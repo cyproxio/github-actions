@@ -1,0 +1,23 @@
+name: 'Cyprox Github Action'
+description: 'Secure APIs with Cyprox'
+branding:
+  icon: 'activity'
+  color: 'purple'
+inputs:
+  api_key:
+    description: 'Provided API Key from platform'
+    required: true
+  scan_id:
+    description: 'Created Scan Policy ID'
+    required: true
+  tag_name:
+    description: 'Tag Name -optional'
+    required: false
+    default: ''
+  fail_action:
+    description: 'The action status will be set to fail if Cyprox any alerts during the scan -optional'
+    required: false
+    default: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
