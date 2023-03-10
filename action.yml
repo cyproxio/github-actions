@@ -1,4 +1,4 @@
-name: 'Cyprox Github Action'
+name: 'Cyprox API Scan Github Action'
 description: 'Secure APIs with Cyprox'
 branding:
   icon: 'activity'
