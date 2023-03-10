@@ -3,7 +3,7 @@ New generation cyber attacks are expoloited via legal HTTP requests! Just changi
 
 Optimized scanning features, you will be able to manage your scheduled API endpoint scans, import your documentation files, and perform scanning against specific vulnerabilities.
 
-## Getting started with Cyprox API Scan action
+## Getting started with Cyprox API Scan Action
 ### Understanding the inputs
 
 | **Input**           | **Description**                                                                        |
