@@ -13,11 +13,22 @@ async function run() {
         } catch (err) {
             core.setFailed(err.message);
         }
-        const failAction = core.getInput('fail_action');
+        console.log(`Scanning process completed, starting to analyze the results`);
         const jOutputFile = fs.readFileSync(`${workspace}/output.json`);
         const currentOutput = JSON.parse(jOutputFile.toString());
-        console.log(currentOutput);
-        core.setFailed(currentOutput['msg']);
+        if(currentOutput['success']) {
+            if(currentOutput['founded'] > 0) {
+                const failAction = core.getInput('fail_action');
+                warnMsg = `Scan action failed as Cyprox has identified ${currentOutput['founded']} alerts, starting to analyze the results`;
+                if(String(failAction).toLowerCase() === 'true') {
+                    core.setFailed(warnMsg);
+                } else {
+                    core.warning(warnMsg);
+                }
+            }
+        } else {
+            core.setFailed(`Scan action failed: ${currentOutput['msg']}`);
+        }
     } catch (err) {
         core.setFailed(err.message);
     }
