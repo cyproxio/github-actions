@@ -9,6 +9,7 @@ Optimized scanning features, you will be able to manage your scheduled API endpo
 | **Input**           | **Description**                                                                        |
 | ------------------- |----------------------------------------------------------------------------------------|
 | api_key             | provided API key from platform                                                         |
+| api_url             | provided API url from platform ```-optional```                                         |
 | scan_id             | scan policy ID                                                                         |
 | tag_name            | tag ```-optional```                                                                    |
 | fail_action         | action status will be set to fail if Cyprox any alerts during the scan  ```-optional```|

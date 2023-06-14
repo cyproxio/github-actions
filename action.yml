@@ -7,6 +7,9 @@ inputs:
   api_key:
     description: 'Provided API Key from platform'
     required: true
+  api_url:
+    description: 'Provided API URL from platform -optional'
+    required: false
   scan_id:
     description: 'Created Scan Policy ID'
     required: true
