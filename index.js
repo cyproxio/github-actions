@@ -6,10 +6,10 @@ async function run() {
     const workspace = process.env.GITHUB_WORKSPACE;
     const currentRunnerID = process.env.GITHUB_RUN_ID;
     try {
-        await exec.exec(`docker pull cyprox/scan-engine:latest -q`);
+        await exec.exec(`docker pull cyprox/scan-agent:latest -q`);
         try {
             core.setSecret(core.getInput('api_key'))
-            await exec.exec(`docker run -v ${workspace}:/output:rw cyprox/scan-engine --api-key=${core.getInput('api_key')} ${core.getInput('api_url') ? ('--api-url='+core.getInput('api_url')) : ''} --scan-id=${core.getInput('scan_id')} --tag-name=${core.getInput('tag_name') ? core.getInput('tag_name') : ('github-action-'+currentRunnerID)} --o=true`);
+            await exec.exec(`docker run -v ${workspace}:/output:rw cyprox/scan-agent --api-key=${core.getInput('api_key')} ${core.getInput('api_url') ? ('--api-url='+core.getInput('api_url')) : ''} --scan-id=${core.getInput('scan_id')} --tag-name=${core.getInput('tag_name') ? core.getInput('tag_name') : ('github-action-'+currentRunnerID)} --o=true`);
         } catch (err) {
             core.setFailed(err.message);
         }
