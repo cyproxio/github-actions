@@ -8,7 +8,7 @@ Optimized scanning features, you will be able to manage your scheduled API endpo
 
 | **Input**           | **Description**                                                                        |
 | ------------------- |----------------------------------------------------------------------------------------|
-| api_key             | provided API key from platform                                                         |
+| token               | provided Access Token from platform                                                    |
 | api_url             | provided API url from platform ```-optional```                                         |
 | scan_id             | scan policy ID                                                                         |
 | tag_name            | tag ```-optional```                                                                    |
@@ -25,7 +25,7 @@ jobs:
       - name: Cyprox
         uses: cyproxio/github-actions@v1.0
         with: 
-          api_key: ${{ secrets.CYPROX_API_KEY }}
+          token: ${{ secrets.CYPROX_ACCESS_TOKEN }}
           scan_id: '6408f0b564e2a543a7d7cef2'
           tag_name: ${{ github.sha }}
           fail_action: true
